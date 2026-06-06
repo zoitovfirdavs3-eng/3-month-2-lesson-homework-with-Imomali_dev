@@ -114,3 +114,10 @@ modeBtn.addEventListener("click", (e) => {
   paletteIdx = (paletteIdx + 1) % palettes.length;
   colorizeAll();
 });
+
+
+
+
+console.log("Hello wolrd");
+
+
