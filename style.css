@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f2;
+    font-family: 'Space Mono', monospace;
+}
+
+.quti {
+    width: 600px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 12px;
+    border: 0.5px solid #ddd;
+    background: #fff;
+    user-select: none;
+}
+
+.particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: float linear infinite;
+    opacity: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100%) scale(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.7;
+    }
+
+    90% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-120%) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.quti h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -1px;
+    position: relative;
+    z-index: 2;
+}
+
+.quti h1 span {
+    display: inline-block;
+    transition: transform 0.15s cubic-bezier(.34, 1.56, .64, 1), color 0.2s;
+}
+
+.hint {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 12px;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.4s;
+}
+
+.score-badge {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    color: #888;
+    z-index: 3;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: ripple-out 0.6s ease-out forwards;
+    z-index: 1;
+}
+
+@keyframes ripple-out {
+    from {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.mode-btn {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 0.5px solid #ccc;
+    background: #fff;
+    color: #666;
+    cursor: pointer;
+    z-index: 4;
+    transition: background 0.15s;
+}
+
+.mode-btn:hover {
+    background: #f5f5f2;
+}
